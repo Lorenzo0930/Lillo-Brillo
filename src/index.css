@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: rgb(255, 255, 0);
+  --color-brand-hover: rgb(230, 230, 0);
+  --color-brand-light: rgba(255, 255, 0, 0.3);
+  --color-brand-dark: rgb(160, 160, 0);
+}
+
+html {
+  scroll-behavior: smooth;
+}
