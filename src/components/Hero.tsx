@@ -11,9 +11,6 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <span className="inline-block py-1.5 px-4 rounded-full bg-brand-light text-stone-900 text-sm xl:text-base 2xl:text-lg font-semibold tracking-wide mb-6">
-              Toelettatura per Cani a Lanciano
-            </span>
             <h1 className="text-5xl lg:text-7xl xl:text-8xl 2xl:text-[6.5rem] 2xl:leading-[1.1] font-sans font-extrabold text-stone-900 leading-tight mb-8">
               Coccole e bellezza per il tuo <span className="text-brand-dark italic">amico a quattro zampe</span>
             </h1>
