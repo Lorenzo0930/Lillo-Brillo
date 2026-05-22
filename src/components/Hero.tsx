@@ -25,7 +25,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex justify-center items-center px-8 py-4 xl:px-10 xl:py-5 2xl:px-12 2xl:py-6 text-lg xl:text-xl 2xl:text-2xl font-semibold rounded-full text-stone-900 bg-brand hover:bg-brand-hover transition-colors shadow-lg shadow-brand/20"
               >
-                Prenota un Appuntamento
+                Contattaci Ora
               </a>
               <a
                 href="#galleria"
