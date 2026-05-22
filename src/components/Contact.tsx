@@ -80,7 +80,7 @@ export default function Contact() {
               <a href="https://www.instagram.com/lillo.brillo.9/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" className="w-12 h-12 xl:w-16 xl:h-16 bg-stone-800 text-white rounded-full flex items-center justify-center hover:bg-brand hover:text-stone-900 transition-colors shadow-sm">
                 <Instagram size={20} className="xl:w-7 xl:h-7" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=100064105600378" className="w-12 h-12 xl:w-16 xl:h-16 bg-stone-800 text-white rounded-full flex items-center justify-center hover:bg-brand hover:text-stone-900 transition-colors shadow-sm">
+              <a href="https://www.facebook.com/lillo.brillo.9" className="w-12 h-12 xl:w-16 xl:h-16 bg-stone-800 text-white rounded-full flex items-center justify-center hover:bg-brand hover:text-stone-900 transition-colors shadow-sm">
                 <Facebook size={20} className="xl:w-7 xl:h-7" />
               </a>
             </div>

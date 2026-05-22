@@ -22,7 +22,6 @@ export default function Navbar() {
             </span>
           </div>
           
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 xl:space-x-12">
             {links.map((link) => (
               <a
@@ -39,7 +38,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="bg-brand text-stone-900 px-5 py-2 xl:px-8 xl:py-3 rounded-full font-semibold xl:text-lg 2xl:text-xl hover:bg-brand-hover transition-colors"
             >
-              Prenota
+              Contattaci
             </a>
           </div>
 
