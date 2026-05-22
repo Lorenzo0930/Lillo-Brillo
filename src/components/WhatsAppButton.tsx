@@ -4,6 +4,7 @@ export default function WhatsAppButton() {
   const whatsappUrl = "https://wa.me/390872717634?text=Salve,%20vorrei%20maggiori%20informazioni%20o%20prenotare%20un%20appuntamento.";
 
   return (
+    <>
     <motion.a
       href={whatsappUrl}
       target="_blank"
@@ -27,5 +28,6 @@ export default function WhatsAppButton() {
         Prenota su WhatsApp
       </span>
     </motion.a>
+    </>
   );
 }
