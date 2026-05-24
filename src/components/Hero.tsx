@@ -4,7 +4,8 @@ import { motion } from 'motion/react';
 // dati ritornati da una ipotetica fetch / ajax
 const objData: { src: string; url?: string }[] = [
   { src: '/WhatsApp Image 2026-05-23 at 14.52.25.jpeg' },
-  { src: '/WhatsApp Image 2026-05-23 at 14.59.24.jpeg' },
+  { src: '/WhatsApp Image 2026-05-23 at 14.52.07.jpeg' },
+  { src: '/WhatsApp Image 2026-05-23 at 14.57.31.jpeg' }
 ];
 
 export default function Hero(): JSX.Element {
