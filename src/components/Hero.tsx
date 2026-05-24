@@ -44,8 +44,8 @@ export default function Hero() {
           >
             <div className="aspect-[4/5] xl:aspect-[5/6] 2xl:aspect-[1/1] w-full max-h-[75vh] 2xl:max-h-[85vh] rounded-3xl xl:rounded-[2.5rem] overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1000"
-                alt="Cane felice dopo la toelettatura"
+                alt="Cane Hero"
+                src="/WhatsApp Image 2026-05-23 at 14.52.25.jpeg"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
