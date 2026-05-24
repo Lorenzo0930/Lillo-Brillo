@@ -1,6 +1,20 @@
+import React, { JSX, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 
-export default function Hero() {
+// dati ritornati da una ipotetica fetch / ajax
+const objData: { src: string; url?: string }[] = [
+  { src: '/WhatsApp Image 2026-05-23 at 14.52.25.jpeg' },
+  { src: '/WhatsApp Image 2026-05-23 at 14.59.24.jpeg' },
+];
+
+export default function Hero(): JSX.Element {
+  const [bannerUrl, setBannerUrl] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    const rnd = Math.floor(Math.random() * objData.length);
+    setBannerUrl(objData[rnd].src);
+  }, []);
+
   return (
     <section className="relative pt-28 pb-16 lg:pt-0 lg:pb-0 lg:min-h-screen flex items-center overflow-hidden xl:py-24 2xl:py-32">
       <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
@@ -35,7 +49,7 @@ export default function Hero() {
               </a>
             </div>
           </motion.div>
- 
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -45,12 +59,12 @@ export default function Hero() {
             <div className="aspect-[4/5] xl:aspect-[5/6] 2xl:aspect-[1/1] w-full max-h-[75vh] 2xl:max-h-[85vh] rounded-3xl xl:rounded-[2.5rem] overflow-hidden shadow-2xl">
               <img
                 alt="Cane Hero"
-                src="/WhatsApp Image 2026-05-23 at 14.52.25.jpeg"
+                src={bannerUrl}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
               />
             </div>
-            {/* Decorative element */}
+
             <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-amber-100 rounded-full -z-10 blur-3xl opacity-70"></div>
             <div className="absolute -top-6 -right-6 w-48 h-48 bg-brand-light rounded-full -z-10 blur-3xl opacity-70"></div>
           </motion.div>
