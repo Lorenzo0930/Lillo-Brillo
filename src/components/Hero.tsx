@@ -55,7 +55,7 @@ export default function Hero(): JSX.Element {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-full"
+            className="relative w-full self-start lg:-mt-12"
           >
             <div className="aspect-[4/5] xl:aspect-[5/6] 2xl:aspect-[1/1] w-full max-h-[75vh] 2xl:max-h-[85vh] rounded-3xl xl:rounded-[2.5rem] overflow-hidden shadow-2xl">
               <img
