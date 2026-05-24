@@ -21,12 +21,12 @@ export default function Hero(): JSX.Element {
       <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left self-start lg:-mt-4"
           >
-            <h1 className="text-5xl lg:text-7xl xl:text-8xl 2xl:text-[6.5rem] 2xl:leading-[1.1] font-sans font-extrabold text-stone-900 leading-tight mb-8">
+            <h1 className="text-5xl lg:text-8xl xl:text-8xl 2xl:text-[6.5rem] 2xl:leading-[1.1] font-sans font-extrabold text-stone-900 leading-tight mb-8">
               Coccole e bellezza per il tuo <span className="text-brand-dark italic">amico a quattro zampe</span>
             </h1>
             <p className="text-lg xl:text-2xl 2xl:text-3xl text-stone-600 mb-10 max-w-2xl xl:max-w-4xl mx-auto lg:mx-0 leading-relaxed">
@@ -55,7 +55,7 @@ export default function Hero(): JSX.Element {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-full self-start lg:-mt-12"
+            className="relative w-full self-start lg:-mt-3" 
           >
             <div className="aspect-[4/5] xl:aspect-[5/6] 2xl:aspect-[1/1] w-full max-h-[75vh] 2xl:max-h-[85vh] rounded-3xl xl:rounded-[2.5rem] overflow-hidden shadow-2xl">
               <img
