@@ -24,10 +24,10 @@ export default function Reviews() {
     <section hidden id="recensioni" className="py-24 xl:py-32 bg-stone-50">
       <div className="max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-4xl xl:text-6xl 2xl:text-7xl font-sans font-extrabold text-stone-900 mb-6">
+          <h2 className="text-4xl xl:text-5xl 2xl:text-5xl font-sans font-extrabold text-stone-900 mb-6">
             Dicono di Noi
           </h2>
-          <p className="text-lg xl:text-2xl 2xl:text-3xl text-stone-600 leading-relaxed">
+          <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 leading-relaxed">
             Alcune delle recensioni a <span className="font-bold text-stone-800">4 e 5 stelle</span> lasciate dai nostri clienti soddisfatti su Google Maps.
           </p>
         </div>
@@ -50,8 +50,8 @@ export default function Reviews() {
                   />
                 ))}
               </div>
-              <p className="text-stone-600 italic mb-8 flex-grow text-base xl:text-lg 2xl:text-xl leading-relaxed">"{review.text}"</p>
-              <div className="font-semibold text-stone-900 mt-auto flex items-center gap-4 xl:text-lg 2xl:text-xl">
+              <p className="text-stone-600 italic mb-8 flex-grow text-base xl:text-base 2xl:text-base leading-relaxed">"{{review.text}}"</p>
+              <div className="font-semibold text-stone-900 mt-auto flex items-center gap-4 xl:text-base 2xl:text-base">
                  <div className="w-10 h-10 xl:w-12 xl:h-12 rounded-full bg-stone-100 flex items-center justify-center text-stone-500 font-bold xl:text-lg">
                     {review.name.charAt(0)}
                  </div>

@@ -47,10 +47,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl xl:text-6xl 2xl:text-7xl font-sans font-extrabold text-stone-900 mb-8">
+            <h2 className="text-4xl xl:text-5xl 2xl:text-5xl font-sans font-extrabold text-stone-900 mb-8">
               Chi Siamo
             </h2>
-            <p className="text-lg xl:text-2xl 2xl:text-3xl text-stone-600 mb-10 leading-relaxed">
+            <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 mb-10 leading-relaxed">
               Benvenuti da <strong className="text-brand-dark">Lillo Brillo</strong>, il salone di toelettatura a Lanciano dove la passione per gli animali incontra la professionalità. 
               Sappiamo quanto il tuo cane sia importante per te, per questo ci dedichiamo a renderlo non solo bellissimo, ma anche sano e felice.
             </p>
@@ -62,10 +62,10 @@ export default function About() {
                     {feature.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl xl:text-2xl 2xl:text-3xl font-semibold text-stone-900 mb-2">
+                    <h3 className="text-lg xl:text-xl 2xl:text-lg font-semibold text-stone-900 mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-stone-600 xl:text-lg 2xl:text-xl leading-relaxed">
+                    <p className="text-stone-600 xl:text-base 2xl:text-base leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

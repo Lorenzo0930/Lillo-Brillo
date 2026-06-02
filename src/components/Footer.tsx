@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="bg-white p-1.5 rounded-xl xl:rounded-2xl">
             <img src="/logo.png" alt="Lillo Brillo Logo" className="w-8 h-8 xl:w-10 xl:h-10 object-contain" />
           </div>
-          <span className="font-sans text-2xl xl:text-3xl font-extrabold text-white tracking-tight">
+          <span className="font-sans text-xl xl:text-2xl font-extrabold text-white tracking-tight">
             Lillo Brillo
           </span>
         </div>

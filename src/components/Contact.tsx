@@ -7,10 +7,10 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-16 xl:gap-24">
           
           <div>
-            <h2 className="text-4xl xl:text-6xl 2xl:text-7xl font-sans font-extrabold text-stone-900 mb-6">
+            <h2 className="text-4xl xl:text-5xl 2xl:text-5xl font-sans font-extrabold text-stone-900 mb-6">
               Dove Trovarci & Contatti
             </h2>
-            <p className="text-lg xl:text-2xl 2xl:text-3xl text-stone-600 mb-12 xl:mb-16 leading-relaxed">
+            <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 mb-12 xl:mb-16 leading-relaxed">
               Siamo a Lanciano, pronti ad accogliere il tuo cane per un trattamento speciale. 
               Contattaci per prenotare un appuntamento o per richiedere informazioni.
             </p>
@@ -21,8 +21,8 @@ export default function Contact() {
                   <MapPin size={24} className="xl:w-8 xl:h-8" />
                 </div>
                 <div>
-                  <h3 className="text-lg xl:text-2xl 2xl:text-3xl font-semibold text-stone-900 mb-1">Indirizzo</h3>
-                  <p className="text-stone-600 xl:text-lg 2xl:text-xl">Lanciano (CH) 66034</p>
+                  <h3 className="text-base xl:text-lg 2xl:text-lg font-semibold text-stone-900 mb-1">Indirizzo</h3>
+                  <p className="text-stone-600 xl:text-base 2xl:text-base">Lanciano (CH) 66034</p>
                   <p className="text-sm xl:text-base text-stone-500 mt-1">Abruzzo, Italia</p>
                 </div>
               </div>
@@ -32,8 +32,8 @@ export default function Contact() {
                   <Phone size={24} className="xl:w-8 xl:h-8" />
                 </div>
                 <div>
-                  <h3 className="text-lg xl:text-2xl 2xl:text-3xl font-semibold text-stone-900 mb-1">Telefono</h3>
-                  <a href="tel:0872717634" className="text-stone-600 xl:text-lg 2xl:text-xl hover:text-brand-dark transition-colors font-medium">
+                  <h3 className="text-base xl:text-lg 2xl:text-lg font-semibold text-stone-900 mb-1">Telefono</h3>
+                  <a href="tel:0872717634" className="text-stone-600 xl:text-base 2xl:text-base hover:text-brand-dark transition-colors font-medium">
                     0872717634
                   </a>
                 </div>
@@ -44,9 +44,9 @@ export default function Contact() {
                   <Clock size={24} className="xl:w-8 xl:h-8" />
                 </div>
                 <div>
-                  <h3 className="text-lg xl:text-2xl 2xl:text-3xl font-semibold text-stone-900 mb-1">Orari di Apertura</h3>
-                  <p className="text-stone-600 xl:text-lg 2xl:text-xl">Lunedì - Sabato: 09:00 - 18:00</p>
-                  <p className="text-stone-600 xl:text-lg 2xl:text-xl">Domenica: Chiuso</p>
+                  <h3 className="text-base xl:text-lg 2xl:text-lg font-semibold text-stone-900 mb-1">Orari di Apertura</h3>
+                  <p className="text-stone-600 xl:text-base 2xl:text-base">Lunedì - Sabato: 09:00 - 18:00</p>
+                  <p className="text-stone-600 xl:text-base 2xl:text-base">Domenica: Chiuso</p>
                   <p className="text-sm xl:text-base text-stone-500 mt-1">Gli orari potrebbero subire variazioni</p>
                 </div>
               </div>
@@ -56,8 +56,8 @@ export default function Contact() {
                   <Mail size={24} className="xl:w-8 xl:h-8" />
                 </div>
                 <div>
-                  <h3 className="text-lg xl:text-2xl 2xl:text-3xl font-semibold text-stone-900 mb-1">Email</h3>
-                  <a href="mailto:lillobrillo2007@libero.it" className="text-stone-600 xl:text-lg 2xl:text-xl hover:text-brand-dark transition-colors font-medium">
+                  <h3 className="text-base xl:text-lg 2xl:text-lg font-semibold text-stone-900 mb-1">Email</h3>
+                  <a href="mailto:lillobrillo2007@libero.it" className="text-stone-600 xl:text-base 2xl:text-base hover:text-brand-dark transition-colors font-medium">
                     lillobrillo2007@libero.it
                   </a>
                 </div>
@@ -68,8 +68,8 @@ export default function Contact() {
                   <ShieldCheck size={24} className="xl:w-8 xl:h-8" />
                 </div>
                 <div>
-                  <h3 className="text-lg xl:text-2xl 2xl:text-3xl font-semibold text-stone-900 mb-1">PEC</h3>
-                  <a href="mailto:lillobrillo@legalmail.it" className="text-stone-600 xl:text-lg 2xl:text-xl hover:text-brand-dark transition-colors font-medium">
+                  <h3 className="text-base xl:text-lg 2xl:text-lg font-semibold text-stone-900 mb-1">PEC</h3>
+                  <a href="mailto:lillobrillo@legalmail.it" className="text-stone-600 xl:text-base 2xl:text-base hover:text-brand-dark transition-colors font-medium">
                     lillobrillo@legalmail.it
                   </a>
                 </div>

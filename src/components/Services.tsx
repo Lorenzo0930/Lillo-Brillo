@@ -51,10 +51,10 @@ export default function Services() {
     <section id="servizi" className="py-24 xl:py-32 bg-stone-50">
       <div className="max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-4xl xl:text-6xl 2xl:text-7xl font-sans font-extrabold text-stone-900 mb-6">
+          <h2 className="text-4xl xl:text-5xl 2xl:text-5xl font-sans font-extrabold text-stone-900 mb-6">
             I Nostri Servizi
           </h2>
-          <p className="text-lg xl:text-2xl 2xl:text-3xl text-stone-600 leading-relaxed">
+          <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 leading-relaxed">
             Offriamo trattamenti completi per la cura, l'igiene e la bellezza del tuo cane, 
             garantendo sempre il massimo comfort durante ogni seduta.
           </p>
@@ -73,10 +73,10 @@ export default function Services() {
               <div className="w-16 h-16 xl:w-20 xl:h-20 bg-brand-light rounded-2xl flex items-center justify-center mb-8 flex-shrink-0">
                 {service.icon}
               </div>
-              <h3 className="text-xl xl:text-2xl 2xl:text-3xl font-bold text-stone-900 mb-4">
+              <h3 className="text-lg xl:text-xl 2xl:text-lg font-bold text-stone-900 mb-4">
                 {service.title}
               </h3>
-              <p className="text-stone-600 xl:text-lg 2xl:text-xl leading-relaxed">
+              <p className="text-stone-600 xl:text-base 2xl:text-base leading-relaxed">
                 {service.description}
               </p>
             </motion.div>

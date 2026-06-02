@@ -17,7 +17,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20 xl:h-24">
           <div className="flex-shrink-0 flex items-center gap-3">
             <img src="/logo.png" alt="Lillo Brillo Logo" className="w-12 h-12 xl:w-14 xl:h-14 object-contain" />
-            <span className="font-sans text-2xl xl:text-3xl font-extrabold text-stone-800 tracking-tight">
+            <span className="font-sans text-xl xl:text-2xl font-extrabold text-stone-800 tracking-tight">
               Lillo Brillo
             </span>
           </div>

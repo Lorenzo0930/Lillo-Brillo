@@ -26,7 +26,7 @@ export default function Hero(): JSX.Element {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left self-start lg:-mt-4"
           >
-            <h1 className="text-4xl lg:text-7xl xl:text-7xl 2xl:text-[5.5rem] 2xl:leading-[1.1] font-sans font-extrabold text-stone-900 leading-tight mb-8">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 2xl:leading-[1.1] font-sans font-extrabold text-stone-900 leading-tight mb-8">
               Coccole e bellezza per il tuo <span className="text-brand-dark italic">amico a quattro zampe</span>
             </h1>
             <div className="flex flex-col sm:flex-row gap-4 xl:gap-6 justify-center lg:justify-start">
@@ -34,13 +34,13 @@ export default function Hero(): JSX.Element {
                 href="https://wa.me/390872717634?text=Salve,%20vorrei%20maggiori%20informazioni%20o%20prenotare%20un%20appuntamento."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex justify-center items-center px-8 py-4 xl:px-10 xl:py-5 2xl:px-12 2xl:py-6 text-lg xl:text-xl 2xl:text-2xl font-semibold rounded-full text-stone-900 bg-brand hover:bg-brand-hover transition-colors shadow-lg shadow-brand/20"
+                className="inline-flex justify-center items-center px-6 py-3 xl:px-8 xl:py-4 2xl:px-10 2xl:py-4 text-base xl:text-lg 2xl:text-lg font-semibold rounded-full text-stone-900 bg-brand hover:bg-brand-hover transition-colors shadow-lg shadow-brand/20"
               >
                 Contattaci Ora
               </a>
               <a
                 href="#galleria"
-                className="inline-flex justify-center items-center px-8 py-4 xl:px-10 xl:py-5 2xl:px-12 2xl:py-6 text-lg xl:text-xl 2xl:text-2xl font-semibold rounded-full text-stone-700 bg-white border border-stone-200 hover:bg-stone-50 transition-colors"
+                className="inline-flex justify-center items-center px-6 py-3 xl:px-8 xl:py-4 2xl:px-10 2xl:py-4 text-base xl:text-lg 2xl:text-lg font-semibold rounded-full text-stone-700 bg-white border border-stone-200 hover:bg-stone-50 transition-colors"
               >
                 Guarda i Nostri Lavori
               </a>

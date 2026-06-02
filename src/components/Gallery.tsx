@@ -14,10 +14,10 @@ export default function Gallery() {
     <section id="galleria" className="py-24 xl:py-32 bg-white">
       <div className="max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 -mt-[41px]">
         <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-4xl xl:text-6xl 2xl:text-7xl font-sans font-extrabold text-stone-900 mb-6">
+          <h2 className="text-4xl xl:text-5xl 2xl:text-5xl font-sans font-extrabold text-stone-900 mb-6">
             I Nostri Clienti Felici
           </h2>
-          <p className="text-lg xl:text-2xl 2xl:text-3xl text-stone-600 leading-relaxed">
+          <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 leading-relaxed">
             Qualche scatto dei nostri amici a quattro zampe dopo il loro trattamento di bellezza da Lillo Brillo.
           </p>
         </div>
