@@ -51,27 +51,8 @@ export default function About() {
               Chi Siamo
             </h2>
             <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 mb-10 leading-relaxed">
-              Benvenuti da <strong className="text-brand-dark">Lillo Brillo</strong>, il salone di toelettatura a Lanciano dove la passione per gli animali incontra la professionalità. 
-              Sappiamo quanto il tuo cane sia importante per te, per questo ci dedichiamo a renderlo non solo bellissimo, ma anche sano e felice.
+              <strong className="text-brand-dark">Lillo Brillo</strong> è una toelettatura per cani. Per noi "Lillo" è il cane per eccellenza: è quello che ti giri a guardare con stupore per strada per la sua bellezza, simpatia, eleganza ed unicità; è quello che completa la famiglia, vive con noi ed arricchisce le nostre giornate. Lillo è il cane salvato dalla strada che avrà sempre la riconoscenza nei suoi occhi. INSOMMA: Lillo è il CANE, te ne innamori e diventa la costante della tua vita. Siamo Anna grande ed Anna piccola, da sempre accomunata dalla passione per i cani e con il tempo ne abbiamo fatto il nostro lavoro. 
             </p>
-
-            <div className="space-y-8 xl:space-y-10">
-              {features.map((feature, index) => (
-                <div key={index} className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 w-12 h-12 xl:w-16 xl:h-16 rounded-full bg-stone-50 flex items-center justify-center border border-stone-100 shadow-xs">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-lg xl:text-xl 2xl:text-lg font-semibold text-stone-900 mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-stone-600 xl:text-base 2xl:text-base leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>
