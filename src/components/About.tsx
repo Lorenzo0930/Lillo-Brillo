@@ -1,49 +1,84 @@
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
 
 export default function About() {
   return (
-    <section id="chi-siamo" className="w-full min-h-screen py-24 xl:py-32 bg-stone-50 flex items-center">
-      <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="grid lg:grid-cols-[minmax(0,0.55fr)_minmax(0,0.45fr)] gap-16 xl:gap-24 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="relative overflow-hidden rounded-[3rem] xl:rounded-[4rem] bg-white shadow-[0_30px_80px_rgba(15,23,42,0.08)] border border-stone-200 min-h-[280px] sm:min-h-[360px] lg:min-h-[440px] xl:min-h-[560px]">
-              <img
-                src="/WhatsApp Image 2026-05-23 at 14.52.52.jpeg"
-                alt="Toelettatura cane"
-                className="w-full h-full object-cover object-center"
-                referrerPolicy="no-referrer"
-                loading="eager"
-                decoding="async"
-              />
-              <div className="absolute top-8 right-8 w-28 h-28 rounded-full bg-brand-light blur-3xl opacity-90"></div>
-              <div className="absolute bottom-8 left-8 w-16 h-16 rounded-full border border-white/80 bg-white/30 blur-sm"></div>
-            </div>
-          </motion.div>
+    <section id="chi-siamo" className="bg-[#fcfbf7] py-20 sm:py-24">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-brand-dark">
+            Chi siamo
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="relative">
-              <div className="absolute -left-10 -top-10 w-24 h-24 rounded-full bg-brand-light blur-3xl opacity-40"></div>
-              <div className="relative bg-white border border-stone-200 rounded-[2.5rem] p-8 sm:p-10 xl:p-12 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
-                <h2 className="text-4xl xl:text-5xl font-sans font-extrabold text-stone-900 mb-8">
-                  Chi Siamo
-                </h2>
-                <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 leading-relaxed">
-                  <strong className="text-brand-dark">Lillo Brillo</strong> è una toelettatura per cani. Per noi "Lillo" è il cane per eccellenza: è quello che ti giri a guardare con stupore per strada per la sua bellezza, simpatia, eleganza ed unicità; è quello che completa la famiglia, vive con noi ed arricchisce le nostre giornate. Lillo è il cane salvato dalla strada che avrà sempre la riconoscenza nei suoi occhi. <br /><strong className="text-brand-dark">INSOMMA: Lillo è il CANE</strong>, te ne innamori e diventa la costante della tua vita. <strong className="text-brand-dark">Siamo Anna grande ed Anna piccola</strong>, da sempre accomunata dalla passione per i cani e con il tempo ne abbiamo fatto il nostro lavoro.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+          <h2 className="mt-4 max-w-xl text-3xl font-black leading-tight text-stone-900 sm:text-4xl lg:text-5xl">
+            Una toelettatura fatta con cura, esperienza e vero amore per i cani
+          </h2>
+
+          <p className="mt-6 text-base leading-8 text-stone-700 sm:text-lg">
+            <span className="font-bold text-stone-900">Lillo Brillo</span> è una
+            toelettatura per cani nata da una passione autentica. Per noi
+            “Lillo” è il cane per eccellenza: quello che ti fa sorridere, che
+            arricchisce la famiglia e che con la sua presenza rende ogni giornata
+            più piena.
+          </p>
+
+          <p className="mt-4 text-base leading-8 text-stone-700 sm:text-lg">
+            È bellezza, simpatia, eleganza e unicità, ma anche dolcezza,
+            riconoscenza e legame. In poche parole, Lillo è il cane di cui ti
+            innamori e che diventa una costante della tua vita.
+          </p>
+
+          <p className="mt-4 text-base leading-8 text-stone-700 sm:text-lg">
+            Siamo <span className="font-bold text-stone-900">Anna grande ed Anna piccola</span>,
+            accomunate da sempre dall’amore per i cani. Col tempo abbiamo
+            trasformato questa passione nel nostro lavoro, scegliendo di prenderci
+            cura di ogni animale con attenzione, pazienza e sensibilità.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="grid gap-4 sm:grid-cols-2"
+        >
+          <div className="rounded-[28px] bg-white p-6 shadow-[0_12px_40px_rgba(0,0,0,0.06)] ring-1 ring-stone-200/70 sm:p-7">
+            <p className="text-4xl font-black text-stone-900">100%</p>
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
+              Attenzione
+            </p>
+            <p className="mt-3 text-sm leading-7 text-stone-700">
+              Ogni cane viene accolto con calma, rispetto e trattamenti pensati
+              in base alle sue esigenze.
+            </p>
+          </div>
+
+          <div className="rounded-[28px] bg-brand p-6 text-black shadow-[0_12px_40px_rgba(0,0,0,0.08)] sm:translate-y-8 sm:p-7">
+            <p className="text-4xl font-black">2</p>
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-black/70">
+              Professioniste
+            </p>
+            <p className="mt-3 text-sm leading-7 text-black/80">
+              Due persone, una visione condivisa: far sentire ogni cane curato,
+              valorizzato e al sicuro.
+            </p>
+          </div>
+
+          <div className="rounded-[28px] bg-stone-900 p-6 text-white shadow-[0_12px_40px_rgba(0,0,0,0.1)] sm:col-span-2 sm:p-7">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/60">
+              La nostra idea
+            </p>
+            <p className="mt-4 max-w-xl text-lg font-semibold leading-8 text-white/90">
+              Non un servizio freddo e veloce, ma un luogo di fiducia dove il cane
+              viene seguito con costanza, delicatezza e competenza.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

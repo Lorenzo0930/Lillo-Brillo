@@ -1,43 +1,58 @@
-import { motion } from 'motion/react';
+import { motion } from "motion/react";
+
+const photos = [
+  "/WhatsApp Image 2026-05-23 at 14.52.25.jpeg",
+  "/WhatsApp Image 2026-05-23 at 14.52.07.jpeg",
+  "/WhatsApp Image 2026-05-23 at 14.57.31.jpeg",
+  "/WhatsApp Image 2026-05-23 at 15.04.36.jpeg",
+  "/WhatsApp Image 2026-05-23 at 14.59.24.jpeg",
+  "/WhatsApp Image 2026-05-23 at 14.55.10.jpeg",
+];
 
 export default function Gallery() {
-  const photos = [
-    'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1606425271394-c3ca9aa1fc06?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1537151608804-ea2f14cb392c?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&q=80&w=800',
-    'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=800',
-  ];
-
   return (
-    <section id="galleria" className="w-full min-h-screen py-24 xl:py-32 bg-white flex items-center">
-      <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-4xl xl:text-5xl 2xl:text-5xl font-sans font-extrabold text-stone-900 mb-6">
-            I Nostri Clienti Felici
-          </h2>
-          <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 leading-relaxed">
-            Qualche scatto dei nostri amici a quattro zampe dopo il loro trattamento di bellezza da Lillo Brillo.
+    <section id="galleria" className="bg-[#fcfbf7] py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.7 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-brand-dark">
+            Galleria
           </p>
-        </div>
+          <h2 className="mt-4 text-3xl font-black leading-tight text-stone-900 sm:text-4xl lg:text-5xl">
+            I nostri clienti felici
+          </h2>
+          <p className="mt-6 text-base leading-8 text-stone-700 sm:text-lg">
+            Qualche scatto dei nostri amici a quattro zampe dopo il loro
+            trattamento di bellezza da Lillo Brillo.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 xl:gap-12">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {photos.map((src, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="aspect-square rounded-2xl xl:rounded-[2rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 group"
+              key={src}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.06 }}
+              className={`group overflow-hidden rounded-[28px] bg-stone-200 shadow-[0_12px_40px_rgba(0,0,0,0.06)] ${
+                index === 0 || index === 3 ? "sm:col-span-2 lg:col-span-1" : ""
+              }`}
             >
-              <img
-                src={src}
-                alt={`Cane toelettato ${index + 1}`}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
+              <div className="relative aspect-[4/4.6] overflow-hidden">
+                <img
+                  src={src}
+                  alt={`Cane curato da Lillo Brillo ${index + 1}`}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-70" />
+              </div>
             </motion.div>
           ))}
         </div>

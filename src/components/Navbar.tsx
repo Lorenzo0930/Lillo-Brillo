@@ -1,78 +1,126 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+
+const links = [
+  { name: "Chi siamo", href: "#chi-siamo" },
+  { name: "Servizi", href: "#servizi" },
+  { name: "Galleria", href: "#galleria" },
+  { name: "Recensioni", href: "#recensioni" },
+  { name: "Contatti", href: "#contatti" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const links = [
-    { name: 'Chi Siamo', href: '#chi-siamo' },
-    { name: 'Servizi', href: '#servizi' },
-    { name: 'Galleria', href: '#galleria' },
-    { name: 'Dove Trovarci', href: '#contatti' },
-  ];
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-stone-200 shadow-sm">
-      <div className="max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="flex justify-between items-center h-20 xl:h-24">
-          <div className="flex-shrink-0 flex items-center gap-3">
-            <a href= "#">
-              <img src="/logo.png" alt="Lillo Brillo Logo" className="w-12 h-12 xl:w-14 xl:h-14 object-contain" />
-            </a>
-            <span className="font-sans text-xl xl:text-2xl font-extrabold text-stone-800 tracking-tight">
-              Lillo Brillo
-            </span>
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-8 xl:space-x-12">
-            {links.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-stone-600 hover:text-brand-dark font-semibold xl:text-lg 2xl:text-xl transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/92 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-md"
+          : "bg-transparent"
+      }`}
+    >
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="#home" className="flex items-center gap-3">
+          <img
+            src="logo.png"
+            alt="Logo Lillo Brillo"
+            className="h-11 w-11 rounded-full object-cover sm:h-12 sm:w-12"
+          />
+
+          <span
+            className={`text-lg font-black tracking-[0.18em] uppercase transition sm:text-xl ${
+              scrolled ? "text-stone-900" : "text-white"
+            }`}
+          >
+            Lillo <span className="text-brand">Brillo</span>
+          </span>
+        </a>
+
+        <div className="hidden items-center gap-7 lg:flex">
+          {links.map((link) => (
             <a
-              href="https://wa.me/390872717634?text=Salve,%20vorrei%20prenotare."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-brand text-stone-900 px-5 py-2 xl:px-8 xl:py-3 rounded-full font-semibold xl:text-lg 2xl:text-xl hover:bg-brand-hover transition-colors"
+              key={link.href}
+              href={link.href}
+              className={`text-sm font-semibold transition ${
+                scrolled
+                  ? "text-stone-700 hover:text-stone-950"
+                  : "text-white/85 hover:text-white"
+              }`}
             >
-              Contattaci
+              {link.name}
             </a>
-          </div>
+          ))}
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-stone-600 hover:text-brand-dark focus:outline-none"
-            >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+          <a
+            href="#contatti"
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-black transition hover:bg-brand-hover"
+          >
+            Prenota ora
+          </a>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
+        <button
+          type="button"
+          onClick={() => setIsOpen((prev) => !prev)}
+          className={`inline-flex h-11 w-11 items-center justify-center rounded-full border transition lg:hidden ${
+            scrolled
+              ? "border-stone-200 bg-white text-stone-900"
+              : "border-white/20 bg-black/20 text-white backdrop-blur-sm"
+          }`}
+          aria-label={isOpen ? "Chiudi menu" : "Apri menu"}
+        >
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </nav>
+
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-stone-200">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="border-t border-stone-200 bg-white lg:hidden">
+          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
+            <a
+              href="#home"
+              onClick={() => setIsOpen(false)}
+              className="mb-2 flex items-center gap-3 rounded-2xl px-2 py-2"
+            >
+              <img
+                src="/logo.png"
+                alt="Logo Lillo Brillo"
+                className="h-11 w-11 rounded-full object-cover"
+              />
+              <span className="text-lg font-black uppercase tracking-[0.18em] text-stone-900">
+                Lillo <span className="text-brand">Brillo</span>
+              </span>
+            </a>
+
             {links.map((link) => (
               <a
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 rounded-md text-base font-medium text-stone-700 hover:text-brand-dark hover:bg-stone-50"
+                className="rounded-2xl px-4 py-3 text-base font-semibold text-stone-800 transition hover:bg-stone-100"
               >
                 {link.name}
               </a>
             ))}
+
+            <a
+              href="#contatti"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 inline-flex min-h-12 items-center justify-center rounded-full bg-brand px-5 py-3 text-base font-bold text-black transition hover:bg-brand-hover"
+            >
+              Prenota ora
+            </a>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

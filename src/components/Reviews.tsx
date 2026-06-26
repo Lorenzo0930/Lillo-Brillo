@@ -1,63 +1,77 @@
-import { motion } from 'motion/react';
-import { Star } from 'lucide-react';
+import { motion } from "motion/react";
+import { Star } from "lucide-react";
+
+const reviews = [
+  {
+    name: "Alessandro M.",
+    text: "Competenza, professionalità e tanta passione! Posto super consigliato per i nostri amici a quattro zampe.",
+    rating: 5,
+  },
+  {
+    name: "Daniela G.",
+    text: "Bravissime e professionali ma soprattutto affettuose con i nostri amici a 4 zampe.",
+    rating: 5,
+  },
+  {
+    name: "Simona D.",
+    text: "Un ambiente accogliente e pulito dove la professionalità e l'amore per gli animali sono di casa.",
+    rating: 5,
+  },
+];
 
 export default function Reviews() {
-  const reviews = [
-    {
-      name: 'Alessandro M.',
-      text: 'Competenza, professionalità e tanta passione! Posto super consigliato per i nostri amici a quattro zampe.',
-      rating: 5,
-    },
-    {
-      name: 'Daniela G.',
-      text: 'Bravissime e professionali ma soprattutto affettuose con i nostri amici a 4 zampe.',
-      rating: 5,
-    },
-    {
-      name: 'Simona D.',
-      text: 'Un ambiente accogliente e pulito dove la professionalità e l\'amore per gli animali sono di casa.',
-      rating: 5,
-    }
-  ];
-
   return (
-    <section id="recensioni" className="w-full min-h-screen py-24 xl:py-32 bg-stone-50 flex items-center">
-      <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <div className="text-center max-w-4xl mx-auto mb-20">
-          <h2 className="text-4xl xl:text-5xl 2xl:text-5xl font-sans font-extrabold text-stone-900 mb-6">
-            Dicono di Noi
-          </h2>
-          <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 leading-relaxed">
-            Alcune delle recensioni a <span className="font-bold text-stone-800">4 e 5 stelle</span> lasciate dai nostri clienti soddisfatti su Google Maps.
+    <section id="recensioni" className="bg-white py-20 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.7 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-brand-dark">
+            Recensioni
           </p>
-        </div>
+          <h2 className="mt-4 text-3xl font-black leading-tight text-stone-900 sm:text-4xl lg:text-5xl">
+            Dicono di noi
+          </h2>
+          <p className="mt-6 text-base leading-8 text-stone-700 sm:text-lg">
+            Alcune delle recensioni a 5 stelle lasciate dai nostri clienti
+            soddisfatti.
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 xl:gap-12">
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {reviews.map((review, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
+            <motion.article
+              key={review.name}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white p-8 xl:p-12 rounded-3xl xl:rounded-[2rem] shadow-sm border border-stone-100 flex flex-col h-full"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: i * 0.08 }}
+              className="flex h-full flex-col rounded-[28px] bg-[#fcfbf7] p-6 shadow-[0_12px_40px_rgba(0,0,0,0.05)] ring-1 ring-stone-200/60 sm:p-7"
             >
-              <div className="flex gap-1.5 mb-5">
-                {[...Array(5)].map((_, index) => (
-                  <Star
-                    key={index}
-                    className={`w-5 h-5 xl:w-6 xl:h-6 ${index < review.rating ? 'text-amber-400 fill-amber-400' : 'text-stone-200 fill-stone-200'}`}
-                  />
+              <div className="flex items-center gap-1 text-brand-dark">
+                {[...Array(review.rating)].map((_, index) => (
+                  <Star key={index} size={18} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-stone-600 italic mb-8 flex-grow text-base xl:text-base 2xl:text-base leading-relaxed">"{review.text}"</p>
-              <div className="font-semibold text-stone-900 mt-auto flex items-center gap-4 xl:text-base 2xl:text-base">
-                 <div className="w-10 h-10 xl:w-12 xl:h-12 rounded-full bg-stone-100 flex items-center justify-center text-stone-500 font-bold xl:text-lg">
-                    {review.name.charAt(0)}
-                 </div>
-                 {review.name}
+
+              <p className="mt-5 text-base leading-8 text-stone-700 sm:text-lg">
+                “{review.text}”
+              </p>
+
+              <div className="mt-8 flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand font-black text-black">
+                  {review.name.charAt(0)}
+                </div>
+                <div>
+                  <p className="font-bold text-stone-900">{review.name}</p>
+                  <p className="text-sm text-stone-500">Cliente Lillo Brillo</p>
+                </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

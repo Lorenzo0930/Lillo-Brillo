@@ -1,15 +1,14 @@
-import React, { JSX, useEffect, useState } from 'react';
-import { motion } from 'motion/react';
+import React, { JSX, useEffect, useState } from "react";
+import { motion } from "motion/react";
 
-// dati ritornati da una ipotetica fetch / ajax
 const objData: { src: string; url?: string }[] = [
-  { src: '/WhatsApp Image 2026-05-23 at 14.52.25.jpeg' },
-  { src: '/WhatsApp Image 2026-05-23 at 14.52.07.jpeg' },
-  { src: '/WhatsApp Image 2026-05-23 at 14.57.31.jpeg' }
+  { src: "/WhatsApp Image 2026-05-23 at 14.52.25.jpeg" },
+  { src: "/WhatsApp Image 2026-05-23 at 14.52.07.jpeg" },
+  { src: "/WhatsApp Image 2026-05-23 at 14.57.31.jpeg" },
 ];
 
 export default function Hero(): JSX.Element {
-  const [bannerUrl, setBannerUrl] = useState<string | undefined>(undefined);
+  const [bannerUrl, setBannerUrl] = useState<string>(objData[0].src);
 
   useEffect(() => {
     const rnd = Math.floor(Math.random() * objData.length);
@@ -17,76 +16,90 @@ export default function Hero(): JSX.Element {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden py-24 sm:py-28 lg:py-0">
-      <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10 flex-1">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center lg:min-h-[calc(100vh-6rem)]">
-          <motion.div
-            initial={{ opacity: 0, y: 0 }}
+    <section
+      id="home"
+      className="relative min-h-[100svh] overflow-hidden bg-zinc-950 text-white"
+    >
+      <div className="absolute inset-0">
+        <img
+          src={bannerUrl}
+          alt="Cane appena toelettato da Lillo Brillo"
+          className="h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/70" />
+      </div>
+
+      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl items-center px-4 pt-28 pb-12 sm:px-6 sm:pt-32 sm:pb-16 lg:px-8">
+        <div className="w-full max-w-3xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center lg:text-left self-center flex flex-col justify-center"
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="max-w-[12ch] text-4xl font-black leading-[0.95] text-balance sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl 2xl:text-7xl 2xl:leading-[1.1] font-sans font-extrabold text-stone-900 leading-tight">
-              Coccole e bellezza per il tuo <span className="text-brand-dark italic">amico a quattro zampe</span>
-            </h1>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 xl:gap-6 justify-center lg:justify-start">
-              <a
-                href="https://wa.me/390872717634?text=Salve,%20vorrei%20maggiori%20informazioni%20o%20prenotare%20un%20appuntamento."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto justify-center items-center px-6 py-3 xl:px-8 xl:py-4 2xl:px-10 2xl:py-4 text-base xl:text-lg 2xl:text-lg font-semibold rounded-full text-stone-900 bg-brand hover:bg-brand-hover transition-colors shadow-lg shadow-brand/20"
-              >
-                Contattaci Ora
-              </a>
-              <a
-                href="#galleria"
-                className="inline-flex w-full sm:w-auto justify-center items-center px-6 py-3 xl:px-8 xl:py-4 2xl:px-10 2xl:py-4 text-base xl:text-lg 2xl:text-lg font-semibold rounded-full text-stone-700 bg-white border border-stone-200 hover:bg-stone-50 transition-colors"
-              >
-                Guarda i Nostri Lavori
-              </a>
-            </div>
+            Coccole e bellezza per il tuo{" "}
+            <span className="text-brand italic">amico a quattro zampe</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mt-5 max-w-2xl text-sm leading-6 text-white/85 sm:mt-6 sm:text-base sm:leading-7 md:text-lg"
+          >
+            Trattamenti curati, attenzione ai dettagli e un ambiente sereno per
+            far sentire il tuo cane pulito, tranquillo e valorizzato.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:flex-wrap"
+          >
+            <a
+              href="#contatti"
+              className="inline-flex min-h-14 items-center justify-center rounded-full bg-brand px-7 py-4 text-base font-bold text-black transition hover:bg-brand-hover sm:min-h-15 sm:px-8 sm:text-lg"
+            >
+              Prenota ora
+            </a>
+
+            <a
+              href="#galleria"
+              className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/15 sm:min-h-15 sm:px-8 sm:text-lg"
+            >
+              Guarda i nostri lavori
+            </a>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-full self-center"
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
+            className="mt-10 sm:mt-14"
           >
-            <div className="aspect-[4/5] xl:aspect-[5/6] 2xl:aspect-[1/1] w-full min-h-[320px] sm:min-h-[420px] lg:min-h-[520px] xl:min-h-[620px] 2xl:min-h-[720px] rounded-3xl xl:rounded-[2.5rem] overflow-hidden shadow-2xl">
-              <img
-                alt="Cane Hero"
-                src={bannerUrl}
-                className="w-full h-full object-cover object-center"
-                referrerPolicy="no-referrer"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
-
-            <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-amber-100 rounded-full -z-10 blur-3xl opacity-70"></div>
-            <div className="absolute -top-6 -right-6 w-48 h-48 bg-brand-light rounded-full -z-10 blur-3xl opacity-70"></div>
+            <a
+              href="#chi-siamo"
+              className="inline-flex min-h-14 items-center gap-3 rounded-full border border-white/15 bg-black/25 px-6 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-black/35 sm:min-h-15 sm:px-7 sm:text-lg"
+            >
+              <span>Scorri</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="h-5 w-5"
+                aria-hidden="true"
+              >
+                <path d="M12 5v14" />
+                <path d="m19 12-7 7-7-7" />
+              </svg>
+            </a>
           </motion.div>
         </div>
       </div>
-
-      <a
-        href="#chi-siamo"
-        className="absolute left-1/2 bottom-4 sm:bottom-6 lg:bottom-8 -translate-x-1/2 z-20 inline-flex items-center justify-center rounded-full border border-stone-200 bg-white/90 px-4 py-3 shadow-[0_20px_60px_rgba(15,23,42,0.12)] transition hover:-translate-y-0.5"
-      >
-        <span className="mr-2 text-sm font-semibold text-stone-700">Scorri</span>
-        <svg
-          className="h-5 w-5 text-brand-dark animate-bounce"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M6 9l6 6 6-6" />
-        </svg>
-      </a>
     </section>
   );
 }
