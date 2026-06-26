@@ -19,17 +19,17 @@ export default function Hero(): JSX.Element {
   return (
     <section className="relative pt-28 pb-16 lg:pt-0 lg:pb-0 lg:min-h-screen flex items-center overflow-hidden xl:py-24 2xl:py-32">
       <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-start lg:min-h-[68vh]">
           <motion.div
             initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center lg:text-left self-start lg:-mt-4"
+            className="text-center lg:text-left self-start lg:-mt-4 flex h-full flex-col justify-between"
           >
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 2xl:leading-[1.1] font-sans font-extrabold text-stone-900 leading-tight mb-8">
+            <h1 className="text-5xl lg:text-6xl xl:text-7xl 2xl:text-7xl 2xl:leading-[1.1] font-sans font-extrabold text-stone-900 leading-tight mb-8 lg:mb-0">
               Coccole e bellezza per il tuo <span className="text-brand-dark italic">amico a quattro zampe</span>
             </h1>
-            <div className="flex flex-col sm:flex-row gap-4 xl:gap-6 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 xl:gap-6 justify-center lg:justify-start pt-8 lg:pt-0">
               <a
                 href="https://wa.me/390872717634?text=Salve,%20vorrei%20maggiori%20informazioni%20o%20prenotare%20un%20appuntamento."
                 target="_blank"
@@ -67,6 +67,24 @@ export default function Hero(): JSX.Element {
           </motion.div>
         </div>
       </div>
+
+      <a
+        href="#chi-siamo"
+        className="absolute left-1/2 bottom-10 -translate-x-1/2 inline-flex items-center justify-center rounded-full border border-stone-200 bg-white/90 px-4 py-3 shadow-[0_20px_60px_rgba(15,23,42,0.12)] transition hover:-translate-y-0.5"
+      >
+        <span className="mr-2 text-sm font-semibold text-stone-700">Scorri</span>
+        <svg
+          className="h-5 w-5 text-brand-dark animate-bounce"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </a>
     </section>
   );
 }

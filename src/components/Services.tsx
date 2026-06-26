@@ -27,7 +27,7 @@ export default function Services() {
     {
       icon: <Bath />,
       title: 'Bagno e Igiene',
-      description: 'Bagni specifici per ogni tipo di pelo, con prodotti ipoallergenici e nutrienti per la cute.',
+      description: 'Il bagno del cane può sembrare cosa facile, ma al contrario è diverso e complesso per ogni soggetto. I tipi di pelo, sono molteplici non solo nel loro aspetto, ma anche nelle condizioni di manutenzione e nella finalità(il pelo di un cane da caccia non sarà mai come quello di un barboncino). Da qui i prodotti a disposizione sono tantissimi',
     },
     {
       icon: <Scissors />,
@@ -52,11 +52,10 @@ export default function Services() {
       <div className="max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="text-center max-w-4xl mx-auto mb-20">
           <h2 className="text-4xl xl:text-5xl 2xl:text-5xl font-sans font-extrabold text-stone-900 mb-6">
-            I Nostri Servizi
+            Cosa Facciamo
           </h2>
           <p className="text-base xl:text-lg 2xl:text-xl text-stone-600 leading-relaxed">
-            Offriamo trattamenti completi per la cura, l'igiene e la bellezza del tuo cane, 
-            garantendo sempre il massimo comfort durante ogni seduta.
+            Da noi il cliente si fidelizza, non è più un avventore casuale, i trattamenti sono programmati in base alle sue esigenze e richieste in modo da essere prefissati e cadenzati. Tu vai dal parrucchiere con regolarità? Lillo viene da noi!
           </p>
         </div>
 
