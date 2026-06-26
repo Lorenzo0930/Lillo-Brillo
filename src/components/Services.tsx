@@ -48,8 +48,8 @@ export default function Services() {
 
   return (
     <>
-    <section id="servizi" className="py-24 xl:py-32 bg-stone-50">
-      <div className="max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+    <section id="servizi" className="w-full min-h-screen py-24 xl:py-32 bg-stone-50 flex items-center">
+      <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="text-center max-w-4xl mx-auto mb-20">
           <h2 className="text-4xl xl:text-5xl 2xl:text-5xl font-sans font-extrabold text-stone-900 mb-6">
             Cosa Facciamo

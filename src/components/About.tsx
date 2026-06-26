@@ -2,8 +2,8 @@ import { motion } from 'motion/react';
 
 export default function About() {
   return (
-    <section id="chi-siamo" className="py-24 xl:py-32 bg-stone-50">
-      <div className="max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+    <section id="chi-siamo" className="w-full min-h-screen py-24 xl:py-32 bg-stone-50 flex items-center">
+      <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="grid lg:grid-cols-[minmax(0,0.55fr)_minmax(0,0.45fr)] gap-16 xl:gap-24 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -11,12 +11,14 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative overflow-hidden rounded-[3rem] xl:rounded-[4rem] bg-white shadow-[0_30px_80px_rgba(15,23,42,0.08)] border border-stone-200">
+            <div className="relative overflow-hidden rounded-[3rem] xl:rounded-[4rem] bg-white shadow-[0_30px_80px_rgba(15,23,42,0.08)] border border-stone-200 min-h-[280px] sm:min-h-[360px] lg:min-h-[440px] xl:min-h-[560px]">
               <img
                 src="/WhatsApp Image 2026-05-23 at 14.52.52.jpeg"
                 alt="Toelettatura cane"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
                 referrerPolicy="no-referrer"
+                loading="eager"
+                decoding="async"
               />
               <div className="absolute top-8 right-8 w-28 h-28 rounded-full bg-brand-light blur-3xl opacity-90"></div>
               <div className="absolute bottom-8 left-8 w-16 h-16 rounded-full border border-white/80 bg-white/30 blur-sm"></div>
@@ -31,7 +33,7 @@ export default function About() {
           >
             <div className="relative">
               <div className="absolute -left-10 -top-10 w-24 h-24 rounded-full bg-brand-light blur-3xl opacity-40"></div>
-              <div className="relative bg-white border border-stone-200 rounded-[2.5rem] p-10 xl:p-12 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
+              <div className="relative bg-white border border-stone-200 rounded-[2.5rem] p-8 sm:p-10 xl:p-12 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
                 <h2 className="text-4xl xl:text-5xl font-sans font-extrabold text-stone-900 mb-8">
                   Chi Siamo
                 </h2>

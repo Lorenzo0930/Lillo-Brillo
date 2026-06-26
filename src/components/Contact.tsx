@@ -2,8 +2,8 @@ import { MapPin, Phone, Clock, Mail, Instagram, Facebook, ShieldCheck } from 'lu
 
 export default function Contact() {
   return (
-    <section id="contatti" className="py-24 xl:py-32 bg-stone-100">
-      <div className="max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
+    <section id="contatti" className="w-full min-h-screen py-24 xl:py-32 bg-stone-100 flex items-center">
+      <div className="w-full max-w-[1700px] 2xl:max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="grid lg:grid-cols-2 gap-16 xl:gap-24">
           
           <div>
@@ -86,7 +86,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="h-[500px] lg:h-auto lg:min-h-[600px] xl:min-h-[750px] 2xl:min-h-[850px] rounded-3xl xl:rounded-[2.5rem] overflow-hidden shadow-lg border border-stone-200">
+          <div className="h-[320px] sm:h-[420px] lg:h-full lg:min-h-[560px] xl:min-h-[680px] 2xl:min-h-[780px] rounded-3xl xl:rounded-[2.5rem] overflow-hidden shadow-lg border border-stone-200">
             <iframe
               title="Mappa Lillo Brillo"
               src="https://maps.google.com/maps?q=Lillo%20Brillo%20SNC%20Lanciano&t=&z=15&ie=UTF8&iwloc=&output=embed"
