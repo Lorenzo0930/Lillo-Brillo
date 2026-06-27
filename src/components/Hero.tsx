@@ -30,54 +30,56 @@ export default function Hero(): JSX.Element {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/70" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl items-center px-4 pt-28 pb-12 sm:px-6 sm:pt-32 sm:pb-16 lg:px-8">
-        <div className="w-full max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="max-w-[12ch] text-4xl font-black leading-[0.95] text-balance sm:text-5xl md:text-6xl lg:text-7xl"
-          >
-            Coccole e bellezza per il tuo{" "}
-            <span className="text-brand italic">amico a quattro zampe</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-5 max-w-2xl text-sm leading-6 text-white/85 sm:mt-6 sm:text-base sm:leading-7 md:text-lg"
-          >
-            Trattamenti curati, attenzione ai dettagli e un ambiente sereno per
-            far sentire il tuo cane pulito, tranquillo e valorizzato.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:flex-wrap"
-          >
-            <a
-              href="#contatti"
-              className="inline-flex min-h-14 items-center justify-center rounded-full bg-brand px-7 py-4 text-base font-bold text-black transition hover:bg-brand-hover sm:min-h-15 sm:px-8 sm:text-lg"
+      <div className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-7xl items-center px-4 pt-28 pb-24 sm:px-6 sm:pt-32 sm:pb-28 lg:px-8">
+        <div className="flex w-full min-h-[calc(100svh-8rem)] flex-col justify-between">
+          <div className="w-full max-w-3xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="max-w-[12ch] text-4xl font-black leading-[0.95] text-balance sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              Prenota ora
-            </a>
+              Coccole e bellezza per il tuo{" "}
+              <span className="text-brand italic">amico a quattro zampe</span>
+            </motion.h1>
 
-            <a
-              href="#galleria"
-              className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/15 sm:min-h-15 sm:px-8 sm:text-lg"
+            <motion.p
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mt-5 max-w-2xl text-sm leading-6 text-white/85 sm:mt-6 sm:text-base sm:leading-7 md:text-lg"
             >
-              Guarda i nostri lavori
-            </a>
-          </motion.div>
+              Trattamenti curati, attenzione ai dettagli e un ambiente sereno per
+              far sentire il tuo cane pulito, tranquillo e valorizzato.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:flex-wrap"
+            >
+              <a
+                href="#contatti"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-brand px-7 py-4 text-base font-bold text-black transition hover:bg-brand-hover sm:min-h-15 sm:px-8 sm:text-lg"
+              >
+                Prenota ora
+              </a>
+
+              <a
+                href="#galleria"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/20 bg-white/10 px-7 py-4 text-base font-semibold text-white backdrop-blur-sm transition hover:bg-white/15 sm:min-h-15 sm:px-8 sm:text-lg"
+              >
+                Guarda i nostri lavori
+              </a>
+            </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}
-            className="mt-10 sm:mt-14"
+            className="flex justify-center pb-2 sm:pb-4"
           >
             <a
               href="#chi-siamo"

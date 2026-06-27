@@ -80,6 +80,27 @@ export default function About() {
           </div>
         </motion.div>
       </div>
+      <div className="mt-14 flex justify-center sm:mt-16">
+        <a
+          href="#servizi"
+          aria-label="Scorri verso i servizi"
+          className="group inline-flex items-center justify-center text-stone-500 transition hover:text-stone-900"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-9 w-9 sm:h-10 sm:w-10 transition-transform duration-300 group-hover:translate-y-1"
+            aria-hidden="true"
+          >
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </a>
+      </div>
     </section>
   );
 }

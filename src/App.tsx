@@ -22,7 +22,6 @@ export default function App() {
         <About />
         <Services />
         <Gallery />
-        <Reviews />
         <Contact />
       </main>
       <Footer />

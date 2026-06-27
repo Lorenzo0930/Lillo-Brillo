@@ -1,95 +1,22 @@
 import { motion } from "motion/react";
-
-const Bath = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    className="h-8 w-8 text-brand-dark xl:h-10 xl:w-10"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M3 12h18M7 12V7a5 5 0 0110 0v5"
-    />
-  </svg>
-);
-
-const Scissors = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    className="h-8 w-8 text-brand-dark xl:h-10 xl:w-10"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M14.5 14.5L21 21M3 3l7 7M10.5 6a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM21 10.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
-    />
-  </svg>
-);
-
-const Wind = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    className="h-8 w-8 text-brand-dark xl:h-10 xl:w-10"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M3 8h12a3 3 0 100-6M3 16h9a2 2 0 100-4"
-    />
-  </svg>
-);
-
-const PawPrint = (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    className="h-8 w-8 text-brand-dark xl:h-10 xl:w-10"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M12 13c2.5 0 4-2 4-4s-1.5-4-4-4-4 2-4 4 1.5 4 4 4zM6 14c0 2.5 2 4 3 4s3-1.5 3-4M18 14c0 2.5-2 4-3 4s-3-1.5-3-4"
-    />
-  </svg>
-);
+import { Bath, Scissors, Sparkles } from "lucide-react";
 
 export default function Services() {
   const services = [
     {
-      icon: Bath,
+      icon: <Bath className="h-8 w-8 text-brand-dark xl:h-10 xl:w-10" strokeWidth={1.8} />,
       title: "Bagno e Igiene",
       description:
         "Il bagno del cane può sembrare cosa facile, ma al contrario è diverso e complesso per ogni soggetto. I tipi di pelo sono molteplici non solo nel loro aspetto, ma anche nelle condizioni di manutenzione e nella finalità: il pelo di un cane da caccia non sarà mai come quello di un barboncino. Da qui i prodotti a disposizione sono tantissimi.",
     },
     {
-      icon: Scissors,
+      icon: <Scissors className="h-8 w-8 text-brand-dark xl:h-10 xl:w-10" strokeWidth={1.8} />,
       title: "Taglio a Forbice",
       description:
         "Tagli personalizzati eseguiti a forbice per valorizzare la razza e le forme del tuo cane.",
     },
     {
-      icon: Wind,
-      title: "Snodatura e Spazzolatura",
-      description:
-        "Rimozione dei nodi e del sottopelo in eccesso per far respirare la pelle e mantenere il pelo lucido.",
-    },
-    {
-      icon: PawPrint,
+      icon: <Sparkles className="h-8 w-8 text-brand-dark xl:h-10 xl:w-10" strokeWidth={1.8} />,
       title: "Cura Dettagli",
       description:
         "Taglio unghie, pulizia orecchie e igiene dentale di base per un benessere completo.",
@@ -97,10 +24,7 @@ export default function Services() {
   ];
 
   return (
-    <section
-      id="servizi"
-      className="w-full bg-white py-20 sm:py-24 xl:py-28"
-    >
+    <section id="servizi" className="w-full bg-white py-20 sm:py-24 xl:py-28">
       <div className="mx-auto w-full max-w-[1700px] px-4 sm:px-6 lg:px-12 xl:px-16">
         <div className="mx-auto mb-14 max-w-4xl text-center sm:mb-16 xl:mb-20">
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-brand-dark">
@@ -122,10 +46,10 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 xl:gap-8">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
           {services.map((service, index) => (
             <motion.div
-              key={index}
+              key={service.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
