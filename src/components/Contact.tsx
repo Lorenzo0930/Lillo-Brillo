@@ -36,17 +36,25 @@ export default function Contact() {
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark sm:h-14 sm:w-14">
                   <MapPin size={22} className="sm:h-6 sm:w-6" />
                 </div>
-                <div>
-                  <h3 className="text-base font-semibold text-stone-900 sm:text-lg">
-                    Indirizzo
-                  </h3>
-                  <p className="mt-1 text-stone-600">Lanciano (CH) 66034</p>
-                  <p className="mt-1 text-sm text-stone-500 sm:text-base">
-                    Abruzzo, Italia
-                  </p>
-                </div>
-              </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-stone-900 sm:text-lg">
+                      Indirizzo
+                    </h3>
+                    <p className="mt-1 text-stone-600">Via Martiri del 6 Ottobre 84</p>
+                    <p className="mt-1 text-sm text-stone-500 sm:text-base">
+                      66034 Lanciano (CH), Italia
+                    </p>
 
+                    <a
+                      href="https://www.google.com/maps/place/Lillo+Brillo+snc/@42.2205002,14.3851607,20.79z/data=!4m6!3m5!1s0x1330fc2d14c80f9d:0xbd9feeea0b10a28e!8m2!3d42.2205661!4d14.3852375!16s%2Fg%2F11b6j4lm46?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center rounded-full bg-stone-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-stone-700"
+                    >
+                      Indicazioni stradali
+                    </a>
+                  </div>
+              </div>
               <div className="flex items-start gap-4 rounded-[24px] bg-white p-5 shadow-sm ring-1 ring-stone-200/70 sm:gap-5 sm:p-6">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark sm:h-14 sm:w-14">
                   <Phone size={22} className="sm:h-6 sm:w-6" />
