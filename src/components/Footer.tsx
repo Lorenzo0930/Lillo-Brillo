@@ -1,4 +1,7 @@
+import { useConsent } from "./Privacy";
+
 export default function Footer() {
+  const { openPreferences } = useConsent();
   return (
     <footer className="border-t border-stone-200 bg-[#f6f3eb]">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
@@ -29,12 +32,11 @@ export default function Footer() {
           <a href="#galleria" className="transition hover:text-stone-900">
             Galleria
           </a>
-          <a href="#recensioni" className="transition hover:text-stone-900">
-            Recensioni
-          </a>
           <a href="#contatti" className="transition hover:text-stone-900">
             Contatti
           </a>
+          <a href="/privacy.html" className="transition hover:text-stone-900">Privacy e cookie</a>
+          <button type="button" onClick={openPreferences} className="transition hover:text-stone-900">Preferenze cookie</button>
         </div>
       </div>
     </footer>

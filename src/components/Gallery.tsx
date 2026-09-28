@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X } from "lucide-react";
 
@@ -13,20 +13,21 @@ const photos = [
 
 export default function Gallery() {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     if (!selectedPhoto) return;
 
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelectedPhoto(null);
-    };
-
+    const dialog = dialogRef.current;
+    const trigger = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    dialog?.showModal();
     document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKeyDown);
 
     return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKeyDown);
+      dialog?.close();
+      document.body.style.overflow = previousOverflow;
+      trigger?.focus();
     };
   }, [selectedPhoto]);
 
@@ -81,6 +82,15 @@ export default function Gallery() {
         </div>
       </div>
 
+      <dialog ref={dialogRef} aria-label="Foto ingrandita della galleria Lillo Brillo"
+        className="fixed inset-0 m-0 h-full max-h-none w-full max-w-none border-0 bg-transparent p-0 backdrop:bg-transparent"
+        onKeyDown={(event) => {
+          if (event.key === "Tab") {
+            event.preventDefault();
+            dialogRef.current?.querySelector("button")?.focus();
+          }
+        }}
+        onCancel={(event) => { event.preventDefault(); setSelectedPhoto(null); }}>
       <AnimatePresence>
         {selectedPhoto && (
           <motion.div
@@ -118,6 +128,7 @@ export default function Gallery() {
           </motion.div>
         )}
       </AnimatePresence>
+      </dialog>
     </section>
   );
 }

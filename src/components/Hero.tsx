@@ -1,19 +1,14 @@
-import React, { JSX, useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "motion/react";
 
-const objData: { src: string; url?: string }[] = [
+const objData = [
   { src: "/WhatsApp Image 2026-05-23 at 14.52.25.jpeg" },
   { src: "/WhatsApp Image 2026-05-23 at 14.52.07.jpeg" },
   { src: "/WhatsApp Image 2026-05-23 at 14.57.31.jpeg" },
 ];
 
-export default function Hero(): JSX.Element {
-  const [bannerUrl, setBannerUrl] = useState<string>(objData[0].src);
-
-  useEffect(() => {
-    const rnd = Math.floor(Math.random() * objData.length);
-    setBannerUrl(objData[rnd].src);
-  }, []);
+export default function Hero() {
+  const [bannerUrl] = useState(() => objData[Math.floor(Math.random() * objData.length)].src);
 
   return (
     <section

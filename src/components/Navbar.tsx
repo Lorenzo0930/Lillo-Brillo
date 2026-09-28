@@ -5,7 +5,6 @@ const links = [
   { name: "Chi siamo", href: "#chi-siamo" },
   { name: "Servizi", href: "#servizi" },
   { name: "Galleria", href: "#galleria" },
-  { name: "Recensioni", href: "#recensioni" },
   { name: "Contatti", href: "#contatti" },
 ];
 
@@ -77,13 +76,20 @@ export default function Navbar() {
               : "border-white/20 bg-black/20 text-white backdrop-blur-sm"
           }`}
           aria-label={isOpen ? "Chiudi menu" : "Apri menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           {isOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
-      {isOpen && (
-        <div className="border-t border-stone-200 bg-white lg:hidden">
+        <div id="mobile-menu" hidden={!isOpen} className="border-t border-stone-200 bg-white lg:hidden"
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setIsOpen(false);
+              document.querySelector<HTMLButtonElement>('[aria-controls="mobile-menu"]')?.focus();
+            }
+          }}>
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 sm:px-6">
             <a
               href="#home"
@@ -120,7 +126,6 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-      )}
     </header>
   );
 }

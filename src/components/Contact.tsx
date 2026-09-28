@@ -7,8 +7,10 @@ import {
   Facebook,
   ShieldCheck,
 } from "lucide-react";
+import { useConsent } from "./Privacy";
 
 export default function Contact() {
+  const { choices, openPreferences } = useConsent();
   return (
     <section
       id="contatti"
@@ -150,7 +152,7 @@ export default function Contact() {
 
           <div className="overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-lg">
             <div className="h-[320px] sm:h-[420px] lg:h-full lg:min-h-[620px]">
-              <iframe
+              {choices.maps ? <iframe
                 title="Mappa Lillo Brillo"
                 src="https://maps.google.com/maps?q=Lillo%20Brillo%20SNC%20Lanciano&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
@@ -158,8 +160,15 @@ export default function Contact() {
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+                referrerPolicy="no-referrer"
+              /> : (
+                <div className="flex h-full flex-col items-center justify-center gap-5 bg-stone-100 p-8 text-center">
+                  <MapPin size={40} aria-hidden="true" />
+                  <p>La mappa di Google viene caricata solo con il tuo consenso.</p>
+                  <button type="button" onClick={openPreferences} className="rounded-full bg-brand px-6 py-3 font-semibold text-black">Gestisci consenso mappa</button>
+                  <p className="text-sm text-stone-600">Puoi anche usare il collegamento Indicazioni stradali.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
