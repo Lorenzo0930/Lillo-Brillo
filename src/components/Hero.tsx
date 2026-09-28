@@ -2,13 +2,14 @@ import { useState } from "react";
 import { motion } from "motion/react";
 
 const objData = [
-  { src: "/WhatsApp Image 2026-05-23 at 14.52.25.jpeg" },
-  { src: "/WhatsApp Image 2026-05-23 at 14.52.07.jpeg" },
-  { src: "/WhatsApp Image 2026-05-23 at 14.57.31.jpeg" },
+  { src: "/WhatsApp Image 2026-05-23 at 14.55.10.jpeg", position: "center" },
+  { src: "/WhatsApp Image 2026-05-23 at 14.52.07.jpeg", position: "center" },
+  // Keep the face in frame when this portrait is cropped on wide screens.
+  { src: "/WhatsApp Image 2026-05-23 at 14.57.31.jpeg", position: "center top" },
 ];
 
 export default function Hero() {
-  const [bannerUrl] = useState(() => objData[Math.floor(Math.random() * objData.length)].src);
+  const [banner] = useState(() => objData[Math.floor(Math.random() * objData.length)]);
 
   return (
     <section
@@ -17,9 +18,10 @@ export default function Hero() {
     >
       <div className="absolute inset-0">
         <img
-          src={bannerUrl}
+          src={banner.src}
           alt="Cane appena toelettato da Lillo Brillo"
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-cover"
+          style={{ objectPosition: banner.position }}
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/70" />
@@ -74,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}
-            className="flex justify-center pb-2 sm:pb-4"
+            className="relative flex justify-center pb-2 sm:pb-4 lg:-top-6"
           >
             <a
               href="#chi-siamo"

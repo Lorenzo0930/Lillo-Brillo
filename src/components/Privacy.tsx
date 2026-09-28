@@ -5,6 +5,8 @@ type SavedChoices = Choices & { version: 1; expires: number };
 const KEY = "lillobrillo-consent-v1";
 const ANALYTICS_ID = "G-189CPHXTR0";
 const DENIED: Choices = { analytics: false, maps: false };
+// Give consent choices equal visual weight, including when revisiting preferences.
+const consentButtonClass = "min-h-12 w-full rounded-full border border-stone-400 bg-brand px-5 py-3 font-semibold text-black transition hover:bg-brand-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900";
 const ConsentContext = createContext<{
   choices: Choices;
   openPreferences: () => void;
@@ -115,10 +117,10 @@ export default function ConsentProvider({ children }: { children: ReactNode }) {
               <label className="flex items-center gap-2"><input type="checkbox" checked={draft.analytics} onChange={(e) => setDraft({ ...draft, analytics: e.target.checked })} /> Statistiche Google Analytics</label>
               <label className="flex items-center gap-2"><input type="checkbox" checked={draft.maps} onChange={(e) => setDraft({ ...draft, maps: e.target.checked })} /> Mappa Google Maps</label>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <button type="button" className="rounded-full border border-stone-400 px-5 py-3 font-semibold" onClick={() => save(DENIED)}>Rifiuta tutti</button>
-              <button type="button" className="rounded-full border border-stone-400 px-5 py-3 font-semibold" onClick={() => save(draft)}>Salva preferenze</button>
-              <button type="button" className="rounded-full border border-stone-400 px-5 py-3 font-semibold" onClick={() => save({ analytics: true, maps: true })}>Accetta tutti</button>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <button type="button" className={consentButtonClass} onClick={() => save(DENIED)}>Rifiuta tutti</button>
+              <button type="button" className={consentButtonClass} onClick={() => save(draft)}>Salva preferenze</button>
+              <button type="button" className={consentButtonClass} onClick={() => save({ analytics: true, maps: true })}>Accetta tutti</button>
             </div>
           </div>
         </section>
